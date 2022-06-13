@@ -4,14 +4,24 @@ import styles from '../styles/Home.module.css'
 import stylesCard from '../styles/Card.module.css'
 import Header from '../components/Header'
 
-const Home: NextPage = () => {
-  const [valueInput, setValueInput] = useState(0)
-  const [valueSquared, setValueSquared] = useState(0)
+export const getServerSideProps = async() => {
+  // const response = await fetch('/api/test')
+  // const { data: cards } = await response.json()
+  
+  return {
+    props: {
+      cards: {}
+    }
+  }
+}
+
+// const Home = ({cards}: {cards: {lentgh: number, data:[]}}) => {
+const Home = () => {
+
 
   const [add, setAdd] = useState(null)
   const [cards, setCards] = useState({ length: 0, data: [] })
 
-  // fetch of the data from the server
   useEffect(() => {
     fetch('/api/test')
       .then(res => res.json())
@@ -19,22 +29,6 @@ const Home: NextPage = () => {
         setCards(data)
       })
   }, [])
-
-  function calculateSquadre() {
-    if (valueInput > 0) {
-      let squared = valueInput * valueInput
-      setValueSquared(squared)
-      console.log(squared)
-    }
-  }
-  
-  function countDown(n: number) {
-    writeMessage(n)
-    if(n >= 1) countDown(n -1)
-  }
-  function writeMessage(n: number){
-    console.log(n)
-  }
 
   return (
     <div className={styles.container}>
@@ -52,34 +46,6 @@ const Home: NextPage = () => {
                 </div>
               )})
           }
-          {/* Funcional programing */}
-          {/* <div className={stylesCard.card}>
-            <h3 className={stylesCard.title}>SQUARE OF A NUMBER</h3>
-            <input 
-              className={stylesCard.input}
-              value={valueInput}
-              onChange={(e) => setValueInput(Number(e.target.value))}
-              type="text" />
-            <button 
-              className={stylesCard.button}
-              onClick={()=> calculateSquadre()}
-              type='button'> calculate
-            </button>
-            { (valueSquared && valueSquared > 0) ? 
-              <h3 className={stylesCard.square}>{valueSquared}</h3>
-              : null
-            }
-          </div> */}
-
-          {/* Recursion */}
-          {/* <div className={stylesCard.card}>
-            <h3 className={stylesCard.title}>RECURSION</h3>
-            <button 
-              className={stylesCard.button}
-              onClick={()=> countDown(5)}
-              type='button'> Set Recursion
-            </button>
-          </div> */}
         </div>
       </main>
     </div>

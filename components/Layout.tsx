@@ -6,7 +6,7 @@ type LayoutProps = PropsWithChildren< {
     children?: React.ReactNode;
   }>;
 
-const Layout: React.FC = ({ children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
     return (
         <div>
             <NavBar />
