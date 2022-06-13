@@ -18,7 +18,6 @@ export const getServerSideProps = async() => {
 // const Home = ({cards}: {cards: {lentgh: number, data:[]}}) => {
 const Home = () => {
 
-
   const [add, setAdd] = useState(null)
   const [cards, setCards] = useState({ length: 0, data: [] })
 
