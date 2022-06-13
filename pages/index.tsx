@@ -4,23 +4,12 @@ import styles from '../styles/Home.module.css'
 import stylesCard from '../styles/Card.module.css'
 import Header from '../components/Header'
 
-interface cardType {
-  length: number,
-  data: [
-    {
-      id: number,
-      title: string,
-      description: string,
-    }
-  ]
-}
-
 const Home: NextPage = () => {
   const [valueInput, setValueInput] = useState(0)
   const [valueSquared, setValueSquared] = useState(0)
 
   const [add, setAdd] = useState(null)
-  const [cards, setCards] = useState<cardType[]>([])
+  const [cards, setCards] = useState({ length: 0, data: [] })
 
   // fetch of the data from the server
   useEffect(() => {
@@ -51,8 +40,6 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <main className={styles.main}>
         <Header />
-        {/* show data of cards and topic of the introduction */}
-
 
         <div className={styles.grid}>
           { cards && cards.data?.map((card: any) => {

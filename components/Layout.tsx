@@ -1,6 +1,12 @@
 import NavBar from './NavBar';
 import Footer from './Footer';
-const Layout: React.FC = ({ children }) => {
+import { PropsWithChildren } from "react";
+
+type LayoutProps = PropsWithChildren< {
+    children?: React.ReactNode;
+  }>;
+
+const Layout: React.FC = ({ children }: LayoutProps) => {
     return (
         <div>
             <NavBar />

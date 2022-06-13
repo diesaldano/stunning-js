@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
 
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
