@@ -1,0 +1,76 @@
+.title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: medium;
+  color: #485563;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  background: #fafafa;
+  color: #485563;
+}
+
+.button {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  background-image: linear-gradient(to right,  #fd746c 0%, #ff9068 100%);
+  border: none;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 0 10px #eee;
+  height: 100%;
+  cursor: pointer;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #ff9068;
+  border-color: #ff9068;
+  transform: scale3d(1.05, 1.05, 1);
+  transition: transform 0.3s;
+  box-shadow: 10 10 50px #555;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: .5rem 0;
+  background: #eaeaea;
+}
