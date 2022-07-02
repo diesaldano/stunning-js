@@ -3,6 +3,31 @@ const data: Record<string, object> = {
         id: 1,
         title: 'Pila de llamadas',
         description: 'Una pila de llamadas es un mecanismo para que un intérprete realice un seguimiento de su lugar en un script que llama a múltiples funciones : qué función se está ejecutando actualmente y qué funciones se llaman desde dentro de esa función, etc.',
+        text: `
+        <p>La comprensión del contexto de ejecución y la pila de ejecución  es vital para entender otros conceptos de JavaScript como Hoisting, Scope y Closures.
+        El contexto de ejecución es un concepto abstracto del entorno de Javascript, el código se ejecuta dentro de este contexto.
+        
+        Contexto de Ejecución Global - Este es el contexto de ejecución por defecto o base. El código que no está dentro de ninguna función está en el contexto de ejecución global. Sólo puede haber un contexto de ejecución global en un programa.
+        
+        Contexto de Ejecución Funcional - Cada vez que se invoca una función, se crea un nuevo contexto de ejecución para esa función. Cada función tiene su propio contexto de ejecución, pero se crea cuando la función es invocada o llamada. Puede haber cualquier número de contextos de ejecución de funciones. 
+        
+        Contexto de Ejecución de la Función Eval - El código ejecutado dentro de una función eval, no es usualmente usado por los desarrolladores de JavaScript.
+        
+        En Javascript existe lo que llamamos Pila de llamadas y su estructura tiene el siguiente funcionamiento: el último en entrar, es el primero en salir. Es así que el motor de javascript lee los scripts y crea un contexto global y continua empujando la pila de ejecución actual. A medida que se van completando se retiran de la Pila, hasta que finaliza la ejecución. 
+        
+        Un ejemplo que podemos tomar es cuando lavamos los platos, comenzamos apilar hacia arriba y luego secamos desde el último que colocamos hasta el primero lavar, finalizando así con la tarea. 
+        
+        Cuando tenemos el script por arriba del formulario sucede que nuestro navegador detiene la lectura y creación de elemento cuando ve la etiqueta script. En nuestro navegador no existe la ID que usamos en el JavaScript, tampoco existe en nuestro formulario. La solución es colocar el elemento que vamos a tratar con el script en la parte de arriba para que se cargue primero. Por esto es que siempre nos han aconsejado colocarla antes de cerrar la etiqueta </body>, esto para que el navegador encuentre todos los elementos antes de ejecutar el script.
+        En el caso del software nuestra mejor estrategia es dividir nuestro código en partes separadas como funciones, módulos, packages, etc. 
+        El motor de javascript lee estas piezas de código y le ayuda para separar la complejidad de la interpretación del código, entonces las ‘piezas’ mencionadas anteriormente le llamaremos ‘Contexto de Ejecución’. 
+        
+        El primer contexto de ejecución se crea cuando Javascript llama al código y se crea el “contexto de ejecución global ”. Aquí aparecerán dos cosas: un objeto global y una variable llamada ‘this’. ‘This’  será la referencia a windows si corre en el entorno del browser o si corre en el entorno de node.
+        
+        Por otra parte, podremos encontrar dos fases:  una fase de creación y otra fase de ejecución, cada una tiene una responsabilidad única. En la primera window y this se crean, y a las declaraciones se le asigna un valor undefined. Por el lado de la fase de ejecución el motor de javascript se ejecuta línea por línea y asigna los valores reales.
+        </p>        
+
+        
+        `,
         tags: ['pila', 'llamadas'],
         code:  `
         function call(number: string) {
@@ -243,12 +268,12 @@ const data: Record<string, object> = {
     32: {
         id: 32,
         title: 'Partial app, currying, compose y pipe',
-        description: 'Partial app, currying, compose y pipe en TypeScript'
+        description: 'Partial app, Currying is a process to reduce functions of more than one argument to functions of one argument with the help of lambda calculus Ex f(x)(y)(z). Function composition is a mechanism of combining multiple simple functions to build a more complicated one. The result of each function is passed to the next one. In mathematics, we often write something like: f(g(x)). So this is the result of g(x) that is passed to f. pipe() is nearly identical to compose(). The only difference is that pipe() moves data in the opposite direction: LEFT --> RIGHT.'
     },
     33: {
         id: 33,
         title: 'Clean Code',
-        description: 'Clean Code en TypeScript'
+        description: 'Principios de ingeniería de software, del libro Clean Code de Robert C. Martin , adaptado para JavaScript. Esta no es una guía de estilo. Es una guía para producir software legible, reutilizable y refactorizable en JavaScript.'
     }
 }
 
