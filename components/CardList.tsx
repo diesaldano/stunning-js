@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { type } from "os";
 import React from "react";
 import stylesCard from '../styles/Card.module.css'
 import styles from '../styles/Home.module.css'
@@ -10,10 +11,18 @@ type CardsListProps = {
     }
 }
 
-const CardList = ({cards}: CardsListProps) => {
+type Card = {
+        id: string,
+        title: string,
+        description: string,
+        text: string
+    }
+
+const CardList = ({cards}: any) => {
+    console.log('cards', cards)
     return (
         <div className={styles.grid}>
-            { cards && cards.map((card: any) => {
+            { cards && cards!.map((card: Card) => {
                 return (
                     <Link key={card.id} href={`/content/${card.id}`}>
                         <div key={card.id} className={stylesCard.card}>
